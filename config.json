@@ -1,6 +1,38 @@
 {
   "cache_time": 7200,
   "api_site": {
+    "tyyszyapi": {
+      "api": "https://tyyszyapi.com/api.php/provide/vod",
+      "name": "天涯影视资源网"
+    },
+    "apidanaizi": {
+      "api": "https://apidanaizi.com/api.php/provide/vod",
+      "name": "大奶子资源网"
+    },
+    "iqiyizyapi": {
+      "api": "https://iqiyizyapi.com/api.php/provide/vod",
+      "name": "爱奇艺资源站"
+    },
+    "jmzy": {
+      "api": "https://api.jmzy.com/api.php/provide/vod",
+      "name": "金马资源网"
+    },
+    "maotaizy": {
+      "api": "https://caiji.maotaizy.cc/api.php/provide/vod",
+      "name": "茅台资源站"
+    },
+    "hw8": {
+      "api": "https://hw8.live/api.php/provide/vod",
+      "name": "华为吧"
+    },
+    "apibdzy": {
+      "api": "https://api.apibdzy.com/api.php/provide/vod",
+      "name": "百度资源"
+    },
+    "fczy888": {
+      "api": "https://api.fczy888.me/api.php/provide/vod",
+      "name": "蜂巢片库"
+    },
     "dyttzy": {
       "api": "http://caiji.dyttzyapi.com/api.php/provide/vod",
       "name": "电影天堂资源",
