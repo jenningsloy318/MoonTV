@@ -42,7 +42,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          command: pages deploy ".vercel/output/static" --project-name="moontv" --binding DB=tvdb
+          command: pages deploy ".vercel/output/static" --project-name="moontv" 
         env: 
             NEXT_PUBLIC_DISABLE_YELLOW_FILTER: true
             USERNAME: ${{ secrets.MOONTV_USERNAME }}
