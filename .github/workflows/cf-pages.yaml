@@ -30,6 +30,11 @@ jobs:
 
       - name: Build the site
         run: pnpm install --frozen-lockfile && pnpm build && pnpm add vercel && npx @cloudflare/next-on-pages
+        env: 
+            NEXT_PUBLIC_DISABLE_YELLOW_FILTER: true
+            USERNAME: ${{ secrets.MOONTV_USERNAME }}
+            PASSWORD: ${{ secrets.MOONTV_PASSWORD }}
+            NEXT_PUBLIC_STORAGE_TYPE: d1
         
       - name: Publish
         uses: cloudflare/wrangler-action@v3
