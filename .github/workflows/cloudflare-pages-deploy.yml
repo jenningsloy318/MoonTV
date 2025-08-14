@@ -1,0 +1,46 @@
+name: Deploy to cloudflare pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      deployments: write
+    name: deploy to cloudflare pages
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "22"
+
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Build the site
+        run: pnpm install --frozen-lockfile && pnpm pages:build
+        #run: pnpm install --frozen-lockfile && pnpm build && pnpm add vercel && npx @cloudflare/next-on-pages
+        
+      - name: Publish
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy --project-name="moontv"
+#          secrets: |
+#           MOONTV_USERNAME
+#           MOONTV_USERNAME
+#        env:
+#         MOONTV_USERNAME: ${{ secrets.MOONTV_USERNAME }}
+#         MOONTV_PASSWORD: ${{ secrets.MOONTV_PASSWORD }} 
